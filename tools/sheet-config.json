@@ -1,0 +1,11 @@
+{
+  "spreadsheetId": "1l4mC0G79gxgYAUDLIt2pdAkCysvghoiehCBnRROwRAk",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1l4mC0G79gxgYAUDLIt2pdAkCysvghoiehCBnRROwRAk/edit",
+  "folderId": "11ZFe8qPH4dtey6c-KfmlJitr_AIkYkte",
+  "folderUrl": "https://drive.google.com/drive/folders/11ZFe8qPH4dtey6c-KfmlJitr_AIkYkte",
+  "entryTab": "Entry",
+  "formResponseTabPrefix": "Form Responses",
+  "formUrl": null,
+  "formUrlNote": "No Google Form was created. The user-Google-drive connector has Docs, Sheets, and Slides tools, but no Google Forms tools. When Michael creates a Form and sends the form link, put it here as formUrl and add the button to the Data tab.",
+  "publishedColumns": ["course", "term", "assessment", "outcome", "score", "max"]
+}

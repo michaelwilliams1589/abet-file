@@ -1,5 +1,5 @@
 // OSUIT ABET File service worker. Bump VERSION on every release (also bump ?v=N on assets).
-const VERSION = 'v2';
+const VERSION = 'v3';
 const CACHE = 'abet-shell-' + VERSION;
 const SHELL = [
   './',
@@ -11,16 +11,16 @@ const SHELL = [
   'log.html',
   'previous.html',
   '404.html',
-  'common.css?v=2',
-  'common.js?v=2',
-  'data.js?v=2',
-  'manifest.json?v=2',
+  'common.css?v=3',
+  'common.js?v=3',
+  'data.js?v=3',
+  'manifest.json?v=3',
   'icons/icon-192.png',
   'icons/icon-512.png',
   'icons/icon-maskable-512.png',
-  'icons/apple-touch-icon.png?v=2',
-  'icons/favicon-32.png?v=2',
-  'icons/favicon.ico?v=2'
+  'icons/apple-touch-icon.png?v=3',
+  'icons/favicon-32.png?v=3',
+  'icons/favicon.ico?v=3'
 ];
 
 self.addEventListener('install', e => {

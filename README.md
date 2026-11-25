@@ -66,7 +66,7 @@ The Data tab charts only anonymized scores. Send results as `course,term,assessm
 
 Program criteria shown on the tab (70% individual threshold, 75% program target) come from the ETDE 3213 outcome mapping and are labeled as criteria, not measured results.
 
-Raw files belong in the private Drive folder [03_Assessment_Hub/Data](https://drive.google.com/drive/folders/11ZFe8qPH4dtey6c-KfmlJitr_AIkYkte).
+Colleagues enter de-identified scores in the private [Grade Entry spreadsheet](https://docs.google.com/spreadsheets/d/1l4mC0G79gxgYAUDLIt2pdAkCysvghoiehCBnRROwRAk/edit) (Data tab: Enter grades). A Google Form could not be created with the current Drive tools; see `tools/SYNC.md`. The scheduled pull is `python3 tools/pull-sheet.py --dir tools/sheet-exports` then `python3 tools/generate-data.py`. Raw files belong in the private Drive folder [03_Assessment_Hub/Data](https://drive.google.com/drive/folders/11ZFe8qPH4dtey6c-KfmlJitr_AIkYkte).
 
 ## Limitations
 

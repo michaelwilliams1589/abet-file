@@ -391,9 +391,12 @@ function renderData(root) {
   root.innerHTML = `
     <p class="note">${esc(a.privacyNote || "")}</p>
     <div class="links" style="margin-bottom:12px">
-      ${a.folderUrl ? driveLink(a.folderUrl, "Raw data folder in Drive", "", "btn primary") : ""}
+      ${a.sheetUrl ? driveLink(a.sheetUrl, "Enter grades (Sheet)", "", "btn primary") : ""}
+      ${a.formUrl ? driveLink(a.formUrl, "Enter grades (Form)", "", "btn primary") : ""}
+      ${a.folderUrl ? driveLink(a.folderUrl, "Raw data folder in Drive", "", "btn") : ""}
       ${a.readmeUrl ? driveLink(a.readmeUrl, "Data folder README", "txt", "btn") : ""}
     </div>
+    ${a.sheetUrl && !a.formUrl ? `<p class="note">The Google Sheet is ready for whole-class entry. A Google Form could not be created automatically (no Forms tools on the Drive connector). After a Form is linked to the Sheet, a Form button will appear here.</p>` : ""}
 
     <div class="card criteria">
       <h3>Program criteria</h3>

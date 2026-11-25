@@ -469,9 +469,18 @@ def build_assessment_data(drive_index: dict, warnings: list[str]) -> dict:
             cycle_outcomes.append(rec)
 
     has_results = bool(rows or precomputed)
+    sheet_cfg = {}
+    cfg_path = HERE / "sheet-config.json"
+    if cfg_path.is_file():
+        try:
+            sheet_cfg = load_json(cfg_path)
+        except Exception as exc:
+            warnings.append(f"Could not read tools/sheet-config.json: {exc}")
     return {
         "folderUrl": link_for(drive_index, "cycle", "03_Assessment_Hub/Data"),
         "readmeUrl": link_for(drive_index, "cycle", "03_Assessment_Hub/Data/README.txt"),
+        "sheetUrl": sheet_cfg.get("spreadsheetUrl") or None,
+        "formUrl": sheet_cfg.get("formUrl") or None,
         "empty": not has_results,
         "emptyMessage": "No data yet — send grades/assessment results to Chief BOT.",
         "criteria": {
@@ -762,7 +771,7 @@ def build(cycle_dir: Path, previous_dir: Path) -> tuple[dict, list[str]]:
             acc = set()
         if isinstance(obj, dict):
             for k, v in obj.items():
-                if k in {"url", "folderUrl", "backupUrl", "previousFolderUrl", "latestUrl", "previousUrl", "dataUrl", "readmeUrl"} and isinstance(v, str) and v:
+                if k in {"url", "folderUrl", "backupUrl", "previousFolderUrl", "latestUrl", "previousUrl", "dataUrl", "readmeUrl", "sheetUrl", "formUrl"} and isinstance(v, str) and v:
                     acc.add(v)
                 else:
                     count_urls(v, acc)
@@ -772,7 +781,7 @@ def build(cycle_dir: Path, previous_dir: Path) -> tuple[dict, list[str]]:
         return acc
 
     urls = count_urls(data)
-    non_drive = [u for u in urls if "drive.google.com" not in u and "github.com" not in u]
+    non_drive = [u for u in urls if "drive.google.com" not in u and "docs.google.com" not in u and "github.com" not in u]
     # hub PR is not a drive link and lives under hubPullRequest.url
     data["_meta"] = {
         "driveLinkCount": len([u for u in urls if "drive.google.com" in u]),
