@@ -1,0 +1,127 @@
+{
+  "cycle": {
+    "title": "OSUIT ABET Cycle 2026\u20132032",
+    "shortTitle": "ABET File",
+    "program": "Instrumentation & Automation",
+    "institution": "OSUIT",
+    "year": 1,
+    "yearLabel": "2026\u201327",
+    "yearsTotal": 6,
+    "startYear": 2026,
+    "endYear": 2032,
+    "interimYear": 3,
+    "interimLabel": "2028\u201329",
+    "prepared": "2026-11-25"
+  },
+  "hubPullRequest": {
+    "label": "Assessment Hub PR #3",
+    "url": "https://github.com/michaelwilliams1589/ABET-and-ASSESSMENT-HUB/pull/3",
+    "status": "Open, not merged, not live"
+  },
+  "deadlines": [
+    {
+      "date": "2027-01-05",
+      "label": "January 5, 2027",
+      "text": "Faculty prerequisite recommendations due."
+    },
+    {
+      "date": "2027-01",
+      "label": "January 2027",
+      "text": "Curriculum Committee review."
+    },
+    {
+      "date": "2027-spring",
+      "label": "Spring 2027",
+      "text": "ETDE 3213 course-aligned objectives take effect."
+    },
+    {
+      "date": "2026-fall",
+      "label": "Fall 2026",
+      "text": "Intended effective term of the presentation mapping. Hub activation awaits PR #3."
+    },
+    {
+      "date": "2028-29",
+      "label": "Year 3, 2028\u201329",
+      "text": "Mid-cycle interim review."
+    },
+    {
+      "date": "2028-fall",
+      "label": "Fall 2028",
+      "text": "Next regular PEO/SO review."
+    }
+  ],
+  "openItems": [
+    "Confirm math-notes date, title, facilitator, attendance, and signatories.",
+    "Resolve the Calculus II course number (catalog MATH 2513 vs self-study MATH 2153).",
+    "Confirm whether the faculty-recommendation request has been sent.",
+    "Confirm PM-notes location, facilitator, recorder, action owners, and next review date.",
+    "Decide assessment methods for the five PM objectives and confirm capstone alignment.",
+    "Check consistency of Spring 2027 objectives with the SO 1 / SO 3 / SO 5 presentation mapping.",
+    "Review and merge Assessment Hub PR #3 (open, not live).",
+    "Self-study, outcomes, and HLC folders are placeholders only."
+  ],
+  "meetings": [
+    {
+      "id": "2026-11_Math_Prerequisite_Review",
+      "yearId": "Y1_2026-27",
+      "title": "Math Prerequisite Review",
+      "date": "2026-11",
+      "dateLabel": "November 2026",
+      "status": "Draft",
+      "summary": "Remove MATH 2714 as a prerequisite for ETDE 3313, 4133, and 4313. Calculus II becomes the prerequisite for 3313 and 4133; 4313 has none. All four math degree-requirement courses stay.",
+      "order": 1
+    },
+    {
+      "id": "2026-11_ETDE3213_PM_Objectives",
+      "yearId": "Y1_2026-27",
+      "title": "ETDE 3213 Project Management Objectives",
+      "date": "2026-11",
+      "dateLabel": "November 2026",
+      "status": "Draft",
+      "summary": "Adopted five course-aligned learning objectives for ETDE 3213, effective Spring 2027.",
+      "order": 2
+    },
+    {
+      "id": "2026-11-06_ETDE3213_Assessment_Mapping",
+      "yearId": "Y1_2026-27",
+      "title": "ETDE 3213 Assessment Mapping",
+      "date": "2026-11-06",
+      "dateLabel": "November 6, 2026",
+      "status": "Draft",
+      "summary": "Mapped the ETDE 3213 Final Project Presentation to student outcomes SO 1, SO 3, and SO 5, effective Fall 2026.",
+      "order": 3
+    }
+  ],
+  "years": [
+    {
+      "id": "Y1_2026-27",
+      "label": "Year 1 (2026\u201327)",
+      "note": "Current year."
+    },
+    {
+      "id": "Y2_2027-28",
+      "label": "Year 2 (2027\u201328)",
+      "note": "Ready for future meeting packets."
+    },
+    {
+      "id": "Y3_2028-29",
+      "label": "Year 3 (2028\u201329)",
+      "note": "Includes the mid-cycle interim review."
+    },
+    {
+      "id": "Y4_2029-30",
+      "label": "Year 4 (2029\u201330)",
+      "note": "Ready for future meeting packets."
+    },
+    {
+      "id": "Y5_2030-31",
+      "label": "Year 5 (2030\u201331)",
+      "note": "Ready for future meeting packets."
+    },
+    {
+      "id": "Y6_2031-32",
+      "label": "Year 6 (2031\u201332)",
+      "note": "Ready for future meeting packets."
+    }
+  ]
+}

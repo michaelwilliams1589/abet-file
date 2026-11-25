@@ -1,0 +1,186 @@
+[
+  {
+    "date": "2026-11-25",
+    "file": "README.txt",
+    "section": "Root",
+    "year": "2026-27 (Y1)",
+    "status": "Final (folder setup)",
+    "notes": "New-cycle folder created; previous cycle is archived and unmodified."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "00_Index_and_Log/Cycle_Index.docx",
+    "section": "00_Index_and_Log",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Cover, topic TOC, file table, deadlines, and open items."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "00_Index_and_Log/Cycle_Index.pdf",
+    "section": "00_Index_and_Log",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "PDF of the cycle index."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "00_Index_and_Log/Running_Log.csv",
+    "section": "00_Index_and_Log",
+    "year": "2026-27 (Y1)",
+    "status": "Open (append-only)",
+    "notes": "Append-only dated log."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "00_Index_and_Log/Running_Log.xlsx",
+    "section": "00_Index_and_Log",
+    "year": "2026-27 (Y1)",
+    "status": "Open (append-only)",
+    "notes": "Spreadsheet copy of the running log."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "00_Index_and_Log/Running_Log.md",
+    "section": "00_Index_and_Log",
+    "year": "2026-27 (Y1)",
+    "status": "Open (append-only)",
+    "notes": "Markdown copy of the running log."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "00_Index_and_Log/OSUIT_ABET_Cycle_2026-2032_Binder.pdf",
+    "section": "00_Index_and_Log",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Compiled binder of new-cycle material to date, with bookmarks."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/OSUIT_ETDE_ABET_Meeting_Notes_2026-11_Math_Prerequisite_Review.pdf",
+    "section": "04_Meeting_Notes / Curriculum & prerequisites",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Formal notes drafted from the reconstructed November 2026 conversation record. Attendance, facilitator, and several owners are To be confirmed."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/OSUIT_ETDE_ABET_Meeting_Notes_2026-11_Math_Prerequisite_Review.docx",
+    "section": "04_Meeting_Notes / Curriculum & prerequisites",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Editable Word copy of the math prerequisite review notes."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/E1_OSUIT_Instrumentation_BT_Proposed_Program_of_Study_Updated.docx",
+    "section": "04_Meeting_Notes / Curriculum & prerequisites",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Updated proposed program of study with the 13-credit mathematics requirements section. Not yet approved."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/E2_OSUIT_Instrumentation_BT_Proposed_Program_of_Study_Original.docx",
+    "section": "04_Meeting_Notes / Curriculum & prerequisites",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Original proposed program of study draft."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/E3_Conversation_Transcript.txt",
+    "section": "04_Meeting_Notes / Curriculum & prerequisites",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Reconstructed conversation record; not a verbatim platform export."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives/OSUIT_ETDE_ABET_Meeting_Notes_2026-11_ETDE3213_PM_Objectives.pdf",
+    "section": "04_Meeting_Notes / Course objectives",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Reformatted from Chief BOT\u2019s draft notes to the official ETDE meeting-notes template. Location, facilitator, action owners, due dates, and next review date are To be confirmed or To be assigned."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives/OSUIT_ETDE_ABET_Meeting_Notes_2026-11_ETDE3213_PM_Objectives.docx",
+    "section": "04_Meeting_Notes / Course objectives",
+    "year": "2026-27 (Y1)",
+    "status": "Draft",
+    "notes": "Editable Word copy of the ETDE 3213 objectives notes."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives/E1_PM_Objectives_Source.txt",
+    "section": "04_Meeting_Notes / Course objectives",
+    "year": "2026-27 (Y1)",
+    "status": "Final (source list)",
+    "notes": "Michael Williams\u2019s five course-aligned learning objectives, verbatim, November 25, 2026."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives/E2_ETDE3213_PM_Objectives_Meeting_Notes_source_draft.docx",
+    "section": "04_Meeting_Notes / Course objectives",
+    "year": "2026-27 (Y1)",
+    "status": "Draft (source)",
+    "notes": "Chief BOT\u2019s original draft notes, retained as source evidence."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/OSUIT_ETDE_ABET_Meeting_Notes_2026-11-06_ETDE3213_Assessment_Mapping.pdf",
+    "section": "04_Meeting_Notes / Assessment mapping",
+    "year": "2026-27 (Y1)",
+    "status": "Draft (rationale synthesized at request)",
+    "notes": "November 6, 2026 mapping minutes rewritten in the official template. Rationale was synthesized at Michael Williams\u2019s request and is not a verbatim transcript."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/OSUIT_ETDE_ABET_Meeting_Notes_2026-11-06_ETDE3213_Assessment_Mapping.docx",
+    "section": "04_Meeting_Notes / Assessment mapping",
+    "year": "2026-27 (Y1)",
+    "status": "Draft (rationale synthesized at request)",
+    "notes": "Editable Word copy of the November 6 mapping minutes."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/E1_ETDE-3213-Outcome-Mapping.html",
+    "section": "04_Meeting_Notes / Assessment mapping",
+    "year": "2026-27 (Y1)",
+    "status": "Open PR (not live)",
+    "notes": "Printable outcome mapping from hub branch project-management-rubric / PR #3."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/E2_ETDE-3213-Final-Project-Group-Rubric.pdf",
+    "section": "04_Meeting_Notes / Assessment mapping",
+    "year": "2026-27 (Y1)",
+    "status": "Open PR (not live)",
+    "notes": "Final Project Group Rubric from the same hub branch."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/E3_ETDE-3213-Mapping-Meeting-Minutes-2026-11-06_hub-source.html",
+    "section": "04_Meeting_Notes / Assessment mapping",
+    "year": "2026-27 (Y1)",
+    "status": "Open PR (not live)",
+    "notes": "Hub-prepared HTML minutes used as the source for the reformatted notes."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "03_Assessment_Hub/Latest/ETDE-3213-Outcome-Mapping.html",
+    "section": "03_Assessment_Hub",
+    "year": "2026-27 (Y1)",
+    "status": "Open PR (not live)",
+    "notes": "Hub documentation copy. PR https://github.com/michaelwilliams1589/ABET-and-ASSESSMENT-HUB/pull/3 is OPEN and not merged."
+  },
+  {
+    "date": "2026-11-25",
+    "file": "03_Assessment_Hub/Latest/ETDE-3213-Final-Project-Group-Rubric.pdf",
+    "section": "03_Assessment_Hub",
+    "year": "2026-27 (Y1)",
+    "status": "Open PR (not live)",
+    "notes": "Hub documentation copy of the group rubric."
+  }
+]

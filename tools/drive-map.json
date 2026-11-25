@@ -1,0 +1,646 @@
+{
+  "backup_root": {
+    "name": "OSUIT_ABET_Backup",
+    "id": "1GVjvbP65iuuaI3kBwW2qaxT9k7sBo8Uh",
+    "webViewLink": "https://drive.google.com/drive/folders/1GVjvbP65iuuaI3kBwW2qaxT9k7sBo8Uh",
+    "kind": "folder"
+  },
+  "cycle_root": {
+    "name": "OSUIT_ABET_Cycle_2026-2032",
+    "id": "1nAnNW_43pOAivAb8yxCE4nJXMzUMfC8w",
+    "webViewLink": "https://drive.google.com/drive/folders/1nAnNW_43pOAivAb8yxCE4nJXMzUMfC8w",
+    "kind": "folder"
+  },
+  "previous_root": {
+    "name": "Previous_Cycle_Final",
+    "id": "17lYSr3ecawgOeHE32zdLberPsMBQf0Dh",
+    "webViewLink": "https://drive.google.com/drive/folders/17lYSr3ecawgOeHE32zdLberPsMBQf0Dh",
+    "kind": "folder"
+  },
+  "entries": [
+    {
+      "ns": "cycle",
+      "path": "",
+      "name": "OSUIT_ABET_Cycle_2026-2032",
+      "id": "1nAnNW_43pOAivAb8yxCE4nJXMzUMfC8w",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1nAnNW_43pOAivAb8yxCE4nJXMzUMfC8w"
+    },
+    {
+      "ns": "cycle",
+      "path": "README.txt",
+      "name": "README.txt",
+      "id": "1jx4GWX5np26VZI_mmYjEQnGVhzlITsnf",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1jx4GWX5np26VZI_mmYjEQnGVhzlITsnf/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log",
+      "name": "00_Index_and_Log",
+      "id": "1CoC5WJ8OEp5jCuyzZ5whq9QIDSd8JtTN",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1CoC5WJ8OEp5jCuyzZ5whq9QIDSd8JtTN"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/previews",
+      "name": "previews",
+      "id": "1_VXvNIEknKB5ZHL3JkY1UvEuu2bdfSNp",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1_VXvNIEknKB5ZHL3JkY1UvEuu2bdfSNp"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/Cycle_Index.docx",
+      "name": "Cycle_Index.docx",
+      "id": "1nb00V4DxVEpDifJHCKxO6XiCi99F4cWC",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1nb00V4DxVEpDifJHCKxO6XiCi99F4cWC/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/Cycle_Index.md",
+      "name": "Cycle_Index.md",
+      "id": "1vM0ejTFka0GpmC-ZWySbw3K1PVATwCVK",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1vM0ejTFka0GpmC-ZWySbw3K1PVATwCVK/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/Cycle_Index.pdf",
+      "name": "Cycle_Index.pdf",
+      "id": "1bsEk_qXcwQFUmTVHd0WC7rZiPxF79teg",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1bsEk_qXcwQFUmTVHd0WC7rZiPxF79teg/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/OSUIT_ABET_Cycle_2026-2032_Binder.pdf",
+      "name": "OSUIT_ABET_Cycle_2026-2032_Binder.pdf",
+      "id": "1_1T9KuWhPeFGScr1WQ17TtHJiHUcZvlZ",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1_1T9KuWhPeFGScr1WQ17TtHJiHUcZvlZ/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/Running_Log.csv",
+      "name": "Running_Log.csv",
+      "id": "1uSWj9tW4Y4fIuvykIWmCB7hdMVCXOPIX",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1uSWj9tW4Y4fIuvykIWmCB7hdMVCXOPIX/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/Running_Log.md",
+      "name": "Running_Log.md",
+      "id": "1fnh8CZYbJlM99Q57-7qvmgs3h1Z54lx8",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1fnh8CZYbJlM99Q57-7qvmgs3h1Z54lx8/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/Running_Log.xlsx",
+      "name": "Running_Log.xlsx",
+      "id": "1g0s6VTr91F-ENzJcSp3jSmqXfdlMSmAj",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1g0s6VTr91F-ENzJcSp3jSmqXfdlMSmAj/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/previews/cover.png",
+      "name": "cover.png",
+      "id": "1wCsXIz0Vd5yI8m6AjVOohOpMRre4XHMh",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1wCsXIz0Vd5yI8m6AjVOohOpMRre4XHMh/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/previews/note-vs-template.png",
+      "name": "note-vs-template.png",
+      "id": "1ZVD4pziD9NLa899vKymUuYH8EUPs66ra",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1ZVD4pziD9NLa899vKymUuYH8EUPs66ra/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "00_Index_and_Log/previews/toc.png",
+      "name": "toc.png",
+      "id": "17V33LYFDGySwODzyrGr-n2iAc2RXKCxv",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/17V33LYFDGySwODzyrGr-n2iAc2RXKCxv/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "01_Self_Study_and_Program_Review",
+      "name": "01_Self_Study_and_Program_Review",
+      "id": "1K_UxImWeP1Lbl_oGY82L1zBiNdhdKLeO",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1K_UxImWeP1Lbl_oGY82L1zBiNdhdKLeO"
+    },
+    {
+      "ns": "cycle",
+      "path": "01_Self_Study_and_Program_Review/README.txt",
+      "name": "README.txt",
+      "id": "1ayQtKnDxG5Y52vd3hMhFLNBgD2wemN29",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1ayQtKnDxG5Y52vd3hMhFLNBgD2wemN29/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "01_Self_Study_and_Program_Review/Interim_Review_Y3_2028-29",
+      "name": "Interim_Review_Y3_2028-29",
+      "id": "1xgQy9TmvtnrDXq-bn91DAaq43T-36RHs",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1xgQy9TmvtnrDXq-bn91DAaq43T-36RHs"
+    },
+    {
+      "ns": "cycle",
+      "path": "01_Self_Study_and_Program_Review/Interim_Review_Y3_2028-29/README.txt",
+      "name": "README.txt",
+      "id": "1eUymu_0u7cNSSFt7ThsLc7TObMBiEP_7",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1eUymu_0u7cNSSFt7ThsLc7TObMBiEP_7/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "02_Outcomes_and_HLC",
+      "name": "02_Outcomes_and_HLC",
+      "id": "1ZW-ZahHwqEjjplMIwrPgatrdzNsLzcmg",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1ZW-ZahHwqEjjplMIwrPgatrdzNsLzcmg"
+    },
+    {
+      "ns": "cycle",
+      "path": "02_Outcomes_and_HLC/README.txt",
+      "name": "README.txt",
+      "id": "1C-bNeeOeefYF_lBsR8qHkmkppx-m3mID",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1C-bNeeOeefYF_lBsR8qHkmkppx-m3mID/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "03_Assessment_Hub",
+      "name": "03_Assessment_Hub",
+      "id": "1kY3P9F8eBTimSXTEL9StjWeNdq2xvEz8",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1kY3P9F8eBTimSXTEL9StjWeNdq2xvEz8"
+    },
+    {
+      "ns": "cycle",
+      "path": "03_Assessment_Hub/Latest",
+      "name": "Latest",
+      "id": "1wkUiWebpt8bHmgs0lXtLCK5xBtdN0JAY",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1wkUiWebpt8bHmgs0lXtLCK5xBtdN0JAY"
+    },
+    {
+      "ns": "cycle",
+      "path": "03_Assessment_Hub/Latest/ETDE-3213-Final-Project-Group-Rubric.pdf",
+      "name": "ETDE-3213-Final-Project-Group-Rubric.pdf",
+      "id": "1DSzsikYgqOuxSsVRimeJm6zG_dN6srlF",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1DSzsikYgqOuxSsVRimeJm6zG_dN6srlF/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "03_Assessment_Hub/Latest/ETDE-3213-Outcome-Mapping.html",
+      "name": "ETDE-3213-Outcome-Mapping.html",
+      "id": "1cwzDB-b-tX_oILL5oDFMUFKiMeaVM6MA",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1cwzDB-b-tX_oILL5oDFMUFKiMeaVM6MA/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "03_Assessment_Hub/Latest/README.txt",
+      "name": "README.txt",
+      "id": "1lDw7Ky-JQcglpDRs6mJOfld4u08wnD2Y",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1lDw7Ky-JQcglpDRs6mJOfld4u08wnD2Y/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "03_Assessment_Hub/Previous_Versions",
+      "name": "Previous_Versions",
+      "id": "114aIo6r8OKtmjVX6igbvLx64gw8JayxE",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/114aIo6r8OKtmjVX6igbvLx64gw8JayxE"
+    },
+    {
+      "ns": "cycle",
+      "path": "03_Assessment_Hub/Previous_Versions/README.txt",
+      "name": "README.txt",
+      "id": "16VW1-C1QV9zwBu2ced6kFQcY-57rccV8",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/16VW1-C1QV9zwBu2ced6kFQcY-57rccV8/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes",
+      "name": "04_Meeting_Notes",
+      "id": "1bQuLO_Z6Ghsvsa_j186yeOmHST0OqX_Z",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1bQuLO_Z6Ghsvsa_j186yeOmHST0OqX_Z"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27",
+      "name": "Y1_2026-27",
+      "id": "1TXKBzUNyuTmf5Vuizj3Bnci9LwqfISnF",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1TXKBzUNyuTmf5Vuizj3Bnci9LwqfISnF"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/README.txt",
+      "name": "README.txt",
+      "id": "1sNhfJ6R29c6l2qTc3JJY1aBS_XTxLGim",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1sNhfJ6R29c6l2qTc3JJY1aBS_XTxLGim/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping",
+      "name": "2026-11-06_ETDE3213_Assessment_Mapping",
+      "id": "1nD2v7Guy4SD84bJ8ufcX7v_nJ6bifhvr",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1nD2v7Guy4SD84bJ8ufcX7v_nJ6bifhvr"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/E1_ETDE-3213-Outcome-Mapping.html",
+      "name": "E1_ETDE-3213-Outcome-Mapping.html",
+      "id": "15LSIpbEpW4szz1n1kU_LGr0CbmSUs_BU",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/15LSIpbEpW4szz1n1kU_LGr0CbmSUs_BU/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/E2_ETDE-3213-Final-Project-Group-Rubric.pdf",
+      "name": "E2_ETDE-3213-Final-Project-Group-Rubric.pdf",
+      "id": "1gSwXFrxl3Y6Q45-6q_CAdearp6EsoCsI",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1gSwXFrxl3Y6Q45-6q_CAdearp6EsoCsI/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/E3_ETDE-3213-Mapping-Meeting-Minutes-2026-11-06_hub-source.html",
+      "name": "E3_ETDE-3213-Mapping-Meeting-Minutes-2026-11-06_hub-source.html",
+      "id": "1nh3GJfegrf_e_ioyzfF2K2hjFHPOqqSN",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1nh3GJfegrf_e_ioyzfF2K2hjFHPOqqSN/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/OSUIT_ETDE_ABET_Meeting_Notes_2026-11-06_ETDE3213_Assessment_Mapping.docx",
+      "name": "OSUIT_ETDE_ABET_Meeting_Notes_2026-11-06_ETDE3213_Assessment_Mapping.docx",
+      "id": "1gpI9cC-1q85qfLyhJjY22gthQ_bp_zeN",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1gpI9cC-1q85qfLyhJjY22gthQ_bp_zeN/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11-06_ETDE3213_Assessment_Mapping/OSUIT_ETDE_ABET_Meeting_Notes_2026-11-06_ETDE3213_Assessment_Mapping.pdf",
+      "name": "OSUIT_ETDE_ABET_Meeting_Notes_2026-11-06_ETDE3213_Assessment_Mapping.pdf",
+      "id": "1uLS4Q5JRV2LYIURyxn8pVLxbOCJk6eLU",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1uLS4Q5JRV2LYIURyxn8pVLxbOCJk6eLU/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives",
+      "name": "2026-11_ETDE3213_PM_Objectives",
+      "id": "1vE1yEY2WY5UUtjEG-Ljm1yLq33FyV4j_",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1vE1yEY2WY5UUtjEG-Ljm1yLq33FyV4j_"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives/E1_PM_Objectives_Source.txt",
+      "name": "E1_PM_Objectives_Source.txt",
+      "id": "18MWrS4WPJgIDiZuS2meDASlzQBZLGZ7D",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/18MWrS4WPJgIDiZuS2meDASlzQBZLGZ7D/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives/E2_ETDE3213_PM_Objectives_Meeting_Notes_source_draft.docx",
+      "name": "E2_ETDE3213_PM_Objectives_Meeting_Notes_source_draft.docx",
+      "id": "1HxuL-PoYGvNVZ00dUQ_A6vA6Ti3QNXhp",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1HxuL-PoYGvNVZ00dUQ_A6vA6Ti3QNXhp/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives/OSUIT_ETDE_ABET_Meeting_Notes_2026-11_ETDE3213_PM_Objectives.docx",
+      "name": "OSUIT_ETDE_ABET_Meeting_Notes_2026-11_ETDE3213_PM_Objectives.docx",
+      "id": "1rCqyy21I0HpuCoVZVC7PAB2cPh9_ySmL",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1rCqyy21I0HpuCoVZVC7PAB2cPh9_ySmL/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_ETDE3213_PM_Objectives/OSUIT_ETDE_ABET_Meeting_Notes_2026-11_ETDE3213_PM_Objectives.pdf",
+      "name": "OSUIT_ETDE_ABET_Meeting_Notes_2026-11_ETDE3213_PM_Objectives.pdf",
+      "id": "1KWykoUn-mlaFmyNX0QM03OZiomdwJB_H",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1KWykoUn-mlaFmyNX0QM03OZiomdwJB_H/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review",
+      "name": "2026-11_Math_Prerequisite_Review",
+      "id": "18NzJRXaQzoaiLkbRtK7-RSlezkTuddVL",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/18NzJRXaQzoaiLkbRtK7-RSlezkTuddVL"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/E1_OSUIT_Instrumentation_BT_Proposed_Program_of_Study_Updated.docx",
+      "name": "E1_OSUIT_Instrumentation_BT_Proposed_Program_of_Study_Updated.docx",
+      "id": "1mA4gCEZnV8yj_nknAu2NMiwih31R-G3B",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1mA4gCEZnV8yj_nknAu2NMiwih31R-G3B/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/E2_OSUIT_Instrumentation_BT_Proposed_Program_of_Study_Original.docx",
+      "name": "E2_OSUIT_Instrumentation_BT_Proposed_Program_of_Study_Original.docx",
+      "id": "10Y7rMihntaRQSHrcnwl6pUDqsl0skSFL",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/10Y7rMihntaRQSHrcnwl6pUDqsl0skSFL/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/E3_Conversation_Transcript.txt",
+      "name": "E3_Conversation_Transcript.txt",
+      "id": "1xG0nNeIBU2qk_UQ_-TVqd6hJjoUMrQK4",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1xG0nNeIBU2qk_UQ_-TVqd6hJjoUMrQK4/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/OSUIT_ETDE_ABET_Meeting_Notes_2026-11_Math_Prerequisite_Review.docx",
+      "name": "OSUIT_ETDE_ABET_Meeting_Notes_2026-11_Math_Prerequisite_Review.docx",
+      "id": "1IygxcBH-SKOvXQpe5CJ-9oPLuM8S2rzi",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1IygxcBH-SKOvXQpe5CJ-9oPLuM8S2rzi/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y1_2026-27/2026-11_Math_Prerequisite_Review/OSUIT_ETDE_ABET_Meeting_Notes_2026-11_Math_Prerequisite_Review.pdf",
+      "name": "OSUIT_ETDE_ABET_Meeting_Notes_2026-11_Math_Prerequisite_Review.pdf",
+      "id": "1dyBNM7l1UIf6K7MrMuMCubRpxMUQRrW6",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1dyBNM7l1UIf6K7MrMuMCubRpxMUQRrW6/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y2_2027-28",
+      "name": "Y2_2027-28",
+      "id": "1CNzMAJHAfnN-9K8-FGzzn3WS-7zWlQne",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1CNzMAJHAfnN-9K8-FGzzn3WS-7zWlQne"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y2_2027-28/README.txt",
+      "name": "README.txt",
+      "id": "1Xz9hu_7A5hl4K7HyR4gO8zCYUdNHlm5b",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1Xz9hu_7A5hl4K7HyR4gO8zCYUdNHlm5b/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y3_2028-29",
+      "name": "Y3_2028-29",
+      "id": "1SsZsax9jyXZ45mCSmlzfw4sQDA_KicKW",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1SsZsax9jyXZ45mCSmlzfw4sQDA_KicKW"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y3_2028-29/README.txt",
+      "name": "README.txt",
+      "id": "15PKht3MCClTEX-O1iVtTbJUYfFekWTNI",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/15PKht3MCClTEX-O1iVtTbJUYfFekWTNI/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y4_2029-30",
+      "name": "Y4_2029-30",
+      "id": "15n9UEWDq2RY8H1l6kMrcz-Wb7XQnXPuP",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/15n9UEWDq2RY8H1l6kMrcz-Wb7XQnXPuP"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y4_2029-30/README.txt",
+      "name": "README.txt",
+      "id": "1Fdx7fTrmWO-i-sqWVq2lwqVKen6ZpGYn",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1Fdx7fTrmWO-i-sqWVq2lwqVKen6ZpGYn/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y5_2030-31",
+      "name": "Y5_2030-31",
+      "id": "1ZJkALjzKH6JYcQCL2MjcvOnf3WeOGtkt",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1ZJkALjzKH6JYcQCL2MjcvOnf3WeOGtkt"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y5_2030-31/README.txt",
+      "name": "README.txt",
+      "id": "1JsIBSmV-zK9XDhB1hqcllRqHAeJ36JOA",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1JsIBSmV-zK9XDhB1hqcllRqHAeJ36JOA/view"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y6_2031-32",
+      "name": "Y6_2031-32",
+      "id": "1FEeaW1KW7NiWjEE2UtODdwy3mgKOXAwu",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1FEeaW1KW7NiWjEE2UtODdwy3mgKOXAwu"
+    },
+    {
+      "ns": "cycle",
+      "path": "04_Meeting_Notes/Y6_2031-32/README.txt",
+      "name": "README.txt",
+      "id": "1GgKhx-Mzx1SFFSH-AqaKqp_mGkYqTeWg",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1GgKhx-Mzx1SFFSH-AqaKqp_mGkYqTeWg/view"
+    },
+    {
+      "ns": "previous",
+      "path": "",
+      "name": "Previous_Cycle_Final",
+      "id": "17lYSr3ecawgOeHE32zdLberPsMBQf0Dh",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/17lYSr3ecawgOeHE32zdLberPsMBQf0Dh"
+    },
+    {
+      "ns": "previous",
+      "path": "README.txt",
+      "name": "README.txt",
+      "id": "1x0hqCLrOfFcDvy14w-g1en_muyh6qz5K",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1x0hqCLrOfFcDvy14w-g1en_muyh6qz5K/view"
+    },
+    {
+      "ns": "previous",
+      "path": "01_Self_Study_and_Program_Review",
+      "name": "01_Self_Study_and_Program_Review",
+      "id": "1rg-op6SDAxCgsmKrOOCcs8WlnACjxD4l",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1rg-op6SDAxCgsmKrOOCcs8WlnACjxD4l"
+    },
+    {
+      "ns": "previous",
+      "path": "01_Self_Study_and_Program_Review/OSUIT_ETAC_Self Study_2025.06.20_v2.pdf",
+      "name": "OSUIT_ETAC_Self Study_2025.06.20_v2.pdf",
+      "id": "1kI4ySxLXbJXFdEV_lvGivZA1f_NePENE",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1kI4ySxLXbJXFdEV_lvGivZA1f_NePENE/view"
+    },
+    {
+      "ns": "previous",
+      "path": "01_Self_Study_and_Program_Review/OSUIT_Program_Review_ABET_Corrected_Final_Clean.docx",
+      "name": "OSUIT_Program_Review_ABET_Corrected_Final_Clean.docx",
+      "id": "1BYuuFx_mdwo9YC9teBp9tvtj0-DZNGNq",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1BYuuFx_mdwo9YC9teBp9tvtj0-DZNGNq/view"
+    },
+    {
+      "ns": "previous",
+      "path": "02_Outcomes_and_HLC",
+      "name": "02_Outcomes_and_HLC",
+      "id": "1GhQypRQdaP0koVeh8QBJWv_0U7wAiIPQ",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1GhQypRQdaP0koVeh8QBJWv_0U7wAiIPQ"
+    },
+    {
+      "ns": "previous",
+      "path": "02_Outcomes_and_HLC/HLC 5 year Instrumentation 26-27(1).docx",
+      "name": "HLC 5 year Instrumentation 26-27(1).docx",
+      "id": "1gazQjimApg5fdCBKdJ1SdCkNN8j9TIfV",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1gazQjimApg5fdCBKdJ1SdCkNN8j9TIfV/view"
+    },
+    {
+      "ns": "previous",
+      "path": "02_Outcomes_and_HLC/OSUIT Instrumentation Outcomes Assessment.docx",
+      "name": "OSUIT Instrumentation Outcomes Assessment.docx",
+      "id": "1sjUX-0VX_wPjCnCJowkAS9yJ_veIte2p",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1sjUX-0VX_wPjCnCJowkAS9yJ_veIte2p/view"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub",
+      "name": "03_Assessment_Hub",
+      "id": "1dn6t-MQjTqluB9e6O67bOoUPi92HGjVN",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1dn6t-MQjTqluB9e6O67bOoUPi92HGjVN"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Latest",
+      "name": "Latest",
+      "id": "1IkvAiJUf4uPg7889UYQSASLozbx-xlpm",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1IkvAiJUf4uPg7889UYQSASLozbx-xlpm"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Latest/OSUIT_ETDE_ABET_Assessment_Hub_V30_Ready_To_Use.html",
+      "name": "OSUIT_ETDE_ABET_Assessment_Hub_V30_Ready_To_Use.html",
+      "id": "19NK-Cppo1gbC5q17TW4dUATiiYCqN5Rh",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/19NK-Cppo1gbC5q17TW4dUATiiYCqN5Rh/view"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Previous_Versions",
+      "name": "Previous_Versions",
+      "id": "19X8vyIgrL7RuSsSIO9HuoQEcddohmHKr",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/19X8vyIgrL7RuSsSIO9HuoQEcddohmHKr"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Previous_Versions/OSUIT_ETDE_ABET_Assessment_Hub_V22_ABET_Data_Template_Style.html",
+      "name": "OSUIT_ETDE_ABET_Assessment_Hub_V22_ABET_Data_Template_Style.html",
+      "id": "1r3HvifczGurvhntATAhj-kr0IXdD-3gK",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1r3HvifczGurvhntATAhj-kr0IXdD-3gK/view"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Previous_Versions/OSUIT_ETDE_ABET_Assessment_Hub_V23_Annual_Calendar_Continuations.html",
+      "name": "OSUIT_ETDE_ABET_Assessment_Hub_V23_Annual_Calendar_Continuations.html",
+      "id": "1Ux0_UX1n3IFoTvD6BDwvkFvKXVUtIgNS",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1Ux0_UX1n3IFoTvD6BDwvkFvKXVUtIgNS/view"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Previous_Versions/OSUIT_ETDE_ABET_Assessment_Hub_V24_Production_Edition.html",
+      "name": "OSUIT_ETDE_ABET_Assessment_Hub_V24_Production_Edition.html",
+      "id": "1yD7PcU3sl5vht1eISRMPRty3AXX796u6",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1yD7PcU3sl5vht1eISRMPRty3AXX796u6/view"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Previous_Versions/OSUIT_ETDE_ABET_Assessment_Hub_V25_Fixed_Production_Navigation.html",
+      "name": "OSUIT_ETDE_ABET_Assessment_Hub_V25_Fixed_Production_Navigation.html",
+      "id": "1SginkfO349HLaczlS65HQ5AA613caZ-V",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1SginkfO349HLaczlS65HQ5AA613caZ-V/view"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Previous_Versions/OSUIT_ETDE_ABET_Assessment_Hub_V27_Personnel_PEO_OSUIT_Branding.html",
+      "name": "OSUIT_ETDE_ABET_Assessment_Hub_V27_Personnel_PEO_OSUIT_Branding.html",
+      "id": "1E7_rnzYOZikp-ZD08cmcU2cDtGW2RNLd",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1E7_rnzYOZikp-ZD08cmcU2cDtGW2RNLd/view"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Previous_Versions/OSUIT_ETDE_ABET_Assessment_Hub_V28_Official_Style_Header.html",
+      "name": "OSUIT_ETDE_ABET_Assessment_Hub_V28_Official_Style_Header.html",
+      "id": "1rM69GoOWur8ZmomHyeZLXPKZIjBwiK_G",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1rM69GoOWur8ZmomHyeZLXPKZIjBwiK_G/view"
+    },
+    {
+      "ns": "previous",
+      "path": "03_Assessment_Hub/Previous_Versions/OSUIT_ETDE_ABET_Assessment_Hub_V29_Shared_Cloud.html",
+      "name": "OSUIT_ETDE_ABET_Assessment_Hub_V29_Shared_Cloud.html",
+      "id": "1FD1-fpzBmJxkmy9tZLzlcjdgtqUT9Mb-",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1FD1-fpzBmJxkmy9tZLzlcjdgtqUT9Mb-/view"
+    },
+    {
+      "ns": "previous",
+      "path": "04_Meeting_Notes",
+      "name": "04_Meeting_Notes",
+      "id": "1W_gVEf79I5V3I69xc5xeNTInxB95QWc1",
+      "kind": "folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1W_gVEf79I5V3I69xc5xeNTInxB95QWc1"
+    },
+    {
+      "ns": "previous",
+      "path": "04_Meeting_Notes/OSUIT_ETDE_ABET_Meeting_Notes_Revised.pdf",
+      "name": "OSUIT_ETDE_ABET_Meeting_Notes_Revised.pdf",
+      "id": "1WZKj2XgdPl5bB1yUMigNdDjU_BZDOtTr",
+      "kind": "file",
+      "webViewLink": "https://drive.google.com/file/d/1WZKj2XgdPl5bB1yUMigNdDjU_BZDOtTr/view"
+    }
+  ]
+}
