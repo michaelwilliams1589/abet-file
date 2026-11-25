@@ -2,7 +2,8 @@
 """Generate data.js for the ABET File PWA from the local cycle folder and Drive map.
 
 Documents are never copied into the site. data.js holds titles, short summaries,
-running-log rows, and Google Drive links only.
+running-log rows, Google Drive links, and anonymized assessment aggregates only.
+Student names and IDs are never written to data.js.
 
 Usage (from the repo root, /workspace/abet-app):
 
@@ -21,7 +22,9 @@ After ABET BOT adds files:
     1. Sync the new files to Google Drive (do not change sharing).
     2. Add each new path and Drive file id to tools/drive-map.json.
     3. Update tools/meta.json if meetings, deadlines, or open items changed.
-    4. Run this script, then commit data.js (and any map/meta edits) and push.
+    4. Add de-identified score rows to tools/assessment-aggregates.json
+       (or tools/assessment-scores.csv). Do not include names or IDs.
+    5. Run this script, then commit data.js (and any map/meta/aggregate edits) and push.
 """
 
 from __future__ import annotations
@@ -171,6 +174,319 @@ def attach_log_urls(rows: list[dict], drive_index: dict) -> list[dict]:
         rec["url"] = link_for(drive_index, "cycle", path)
         out.append(rec)
     return out
+
+
+
+MIN_N_FOR_DISTRIBUTION = 5
+FORBIDDEN_SCORE_FIELDS = {
+    "name", "student", "student_name", "studentname", "first", "last",
+    "first_name", "last_name", "firstname", "lastname", "full_name",
+    "fullname", "sid", "id", "student_id", "studentid", "banner",
+    "banner_id", "bannerid", "email", "netid", "cwid", "n_number",
+    "nnumber", "ssn", "wid", "widid", "anonymous_id", "anon_id",
+    "code", "student_code", "roster",
+}
+
+DEFAULT_OUTCOMES = [
+    {"id": "SO 1", "short": "Technical problem-solving", "label": "SO 1 — Technical problem-solving"},
+    {"id": "SO 2", "short": "Design", "label": "SO 2 — Design"},
+    {"id": "SO 3", "short": "Communication", "label": "SO 3 — Communication"},
+    {"id": "SO 4", "short": "Testing and measurement", "label": "SO 4 — Testing and measurement"},
+    {"id": "SO 5", "short": "Teamwork", "label": "SO 5 — Teamwork"},
+]
+
+
+def _norm_key(key: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", (key or "").strip().lower()).strip("_")
+
+
+def _pct(score, maximum) -> float | None:
+    try:
+        s = float(score)
+        m = float(maximum) if maximum not in (None, "") else 100.0
+    except (TypeError, ValueError):
+        return None
+    if m <= 0:
+        return None
+    return round(100.0 * s / m, 2)
+
+
+def _mean(vals: list[float]) -> float | None:
+    return round(sum(vals) / len(vals), 1) if vals else None
+
+
+def _median(vals: list[float]) -> float | None:
+    if not vals:
+        return None
+    xs = sorted(vals)
+    n = len(xs)
+    mid = n // 2
+    if n % 2:
+        return round(xs[mid], 1)
+    return round((xs[mid - 1] + xs[mid]) / 2, 1)
+
+
+def _histogram(vals: list[float], bins: int = 10) -> list[dict]:
+    edges = list(range(0, 101, 100 // bins))
+    if edges[-1] != 100:
+        edges.append(100)
+    counts = [0] * (len(edges) - 1)
+    for v in vals:
+        x = min(100.0, max(0.0, v))
+        # 100 belongs in the last bin
+        i = min(len(counts) - 1, int(x // (100 / (len(edges) - 1))))
+        if x >= 100:
+            i = len(counts) - 1
+        counts[i] += 1
+    out = []
+    for i, c in enumerate(counts):
+        lo, hi = edges[i], edges[i + 1]
+        label = f"{lo}–{hi}" if i < len(counts) - 1 else f"{lo}–{hi}"
+        out.append({"from": lo, "to": hi, "label": label, "count": c})
+    return out
+
+
+def _summarize_scores(vals: list[float], threshold: float, min_n: int) -> dict:
+    n = len(vals)
+    meeting = sum(1 for v in vals if v >= threshold)
+    rec = {
+        "n": n,
+        "mean": _mean(vals),
+        "median": _median(vals),
+        "min": round(min(vals), 1) if vals else None,
+        "max": round(max(vals), 1) if vals else None,
+        "meeting": meeting,
+        "percentMeeting": round(100.0 * meeting / n, 1) if n else None,
+        "distributionShown": n >= min_n,
+    }
+    if n >= min_n:
+        rec["scores"] = [round(v, 1) for v in sorted(vals)]
+        rec["histogram"] = _histogram(vals)
+    return rec
+
+
+def _load_score_rows(warnings: list[str]) -> tuple[dict, list[dict]]:
+    src = HERE / "assessment-aggregates.json"
+    raw = load_json(src) if src.is_file() else {}
+    if not src.is_file():
+        warnings.append("tools/assessment-aggregates.json not found; Data tab will be empty.")
+        raw = {}
+
+    forbidden_found = []
+    rows: list[dict] = []
+
+    def accept_row(item: dict, origin: str):
+        cleaned = {}
+        dropped = []
+        for k, v in item.items():
+            nk = _norm_key(k)
+            if nk in FORBIDDEN_SCORE_FIELDS or nk.endswith("_id") or nk.endswith("_name"):
+                dropped.append(k)
+                continue
+            cleaned[nk] = v
+        if dropped:
+            forbidden_found.append(f"{origin}: dropped {', '.join(dropped)}")
+        course = str(cleaned.get("course") or "").strip()
+        term = str(cleaned.get("term") or "").strip()
+        assessment = str(cleaned.get("assessment") or cleaned.get("assignment") or "").strip()
+        outcome = str(cleaned.get("outcome") or cleaned.get("so") or "").strip()
+        pct = _pct(cleaned.get("score") or cleaned.get("earned") or cleaned.get("percent"),
+                   cleaned.get("max") or cleaned.get("maximum") or cleaned.get("points_possible") or 100)
+        if pct is None:
+            warnings.append(f"{origin}: skipped a row with no usable score")
+            return
+        rows.append({
+            "course": course or "Unspecified course",
+            "term": term or "Unspecified term",
+            "assessment": assessment or "Unspecified assessment",
+            "outcome": outcome or "",
+            "percent": pct,
+        })
+
+    for i, item in enumerate(raw.get("rows") or []):
+        if isinstance(item, dict):
+            accept_row(item, f"assessment-aggregates.json rows[{i}]")
+
+    csv_path = HERE / "assessment-scores.csv"
+    if csv_path.is_file():
+        with csv_path.open(encoding="utf-8", newline="") as f:
+            # Skip comment lines
+            lines = [ln for ln in f if not ln.lstrip().startswith("#")]
+        reader = csv.DictReader(io.StringIO("".join(lines)))
+        for i, item in enumerate(reader):
+            accept_row(item, f"assessment-scores.csv row {i+2}")
+
+    if forbidden_found:
+        for msg in forbidden_found:
+            warnings.append("Removed identifier column(s) from assessment input — " + msg)
+
+    precomputed = []
+    for i, item in enumerate(raw.get("aggregates") or []):
+        if not isinstance(item, dict):
+            continue
+        # Never pass through names/ids
+        safe = {k: v for k, v in item.items() if _norm_key(k) not in FORBIDDEN_SCORE_FIELDS and not _norm_key(k).endswith("_id") and not _norm_key(k).endswith("_name")}
+        precomputed.append(safe)
+
+    return raw, rows, precomputed
+
+
+def build_assessment_data(drive_index: dict, warnings: list[str]) -> dict:
+    raw, rows, precomputed = _load_score_rows(warnings)
+    criteria = raw.get("criteria") or {}
+    threshold = float(criteria.get("threshold") or 70)
+    target = float(criteria.get("programTarget") or 75)
+    min_n = int(raw.get("minNForDistribution") or MIN_N_FOR_DISTRIBUTION)
+    outcomes = raw.get("outcomes") or DEFAULT_OUTCOMES
+
+    # Group rows
+    def key(r):
+        return (r["course"], r["term"])
+
+    sections = []
+    by_section: dict[tuple, list] = {}
+    for r in rows:
+        by_section.setdefault(key(r), []).append(r)
+
+    for (course, term), items in sorted(by_section.items(), key=lambda kv: (kv[0][1], kv[0][0])):
+        percents = [x["percent"] for x in items]
+        summary = _summarize_scores(percents, threshold, min_n)
+        # Per assessment
+        by_as: dict[str, list] = {}
+        for x in items:
+            by_as.setdefault(x["assessment"], []).append(x["percent"])
+        assessments = []
+        for name, vals in sorted(by_as.items()):
+            rec = {"name": name, **_summarize_scores(vals, threshold, min_n)}
+            assessments.append(rec)
+        # Per outcome within the section
+        by_out: dict[str, list] = {}
+        for x in items:
+            if x["outcome"]:
+                by_out.setdefault(x["outcome"], []).append(x["percent"])
+        section_outcomes = [{"id": oid, **_summarize_scores(vals, threshold, min_n)} for oid, vals in sorted(by_out.items())]
+        sections.append({
+            "course": course,
+            "term": term,
+            "source": "anonymized score rows",
+            **summary,
+            "assessments": assessments,
+            "outcomes": section_outcomes,
+        })
+
+    # Precomputed aggregates (used when no rows exist for that course/term)
+    covered = {(s["course"], s["term"]) for s in sections}
+    # Also allow precomputed even alongside? Only if that section has no rows.
+    pre_groups: dict[tuple, list] = {}
+    for a in precomputed:
+        course = str(a.get("course") or "Unspecified course").strip()
+        term = str(a.get("term") or "Unspecified term").strip()
+        if (course, term) in covered:
+            continue
+        pre_groups.setdefault((course, term), []).append(a)
+    for (course, term), items in sorted(pre_groups.items()):
+        # If a single overall row exists, use it; otherwise compose from parts
+        overall = next((x for x in items if not x.get("assessment") and not x.get("outcome")), None)
+        n = int(overall.get("n") or 0) if overall else sum(int(x.get("n") or 0) for x in items)
+        section = {
+            "course": course,
+            "term": term,
+            "source": (overall or items[0]).get("source") or "precomputed aggregate (no score list provided)",
+            "n": n,
+            "mean": (overall or {}).get("mean"),
+            "median": (overall or {}).get("median"),
+            "min": (overall or {}).get("min"),
+            "max": (overall or {}).get("max"),
+            "meeting": (overall or {}).get("meeting"),
+            "percentMeeting": (overall or {}).get("percentMeeting") or (overall or {}).get("percent_meeting"),
+            "distributionShown": False,
+            "assessments": [],
+            "outcomes": [],
+        }
+        if n >= min_n and overall and overall.get("scores"):
+            # Only if caller already provided an anonymized score list
+            scores = [float(s) for s in overall["scores"]]
+            section.update(_summarize_scores(scores, threshold, min_n))
+            section["source"] = overall.get("source") or section["source"]
+        for x in items:
+            if x.get("assessment"):
+                section["assessments"].append({
+                    "name": x["assessment"],
+                    "n": x.get("n"),
+                    "mean": x.get("mean"),
+                    "percentMeeting": x.get("percentMeeting") or x.get("percent_meeting"),
+                    "distributionShown": False,
+                })
+            if x.get("outcome"):
+                section["outcomes"].append({
+                    "id": x["outcome"],
+                    "n": x.get("n"),
+                    "mean": x.get("mean"),
+                    "percentMeeting": x.get("percentMeeting") or x.get("percent_meeting"),
+                    "distributionShown": False,
+                })
+        sections.append(section)
+
+    # Cycle-level outcome summary from score rows
+    cycle_outcomes = []
+    by_out: dict[str, list] = {}
+    for r in rows:
+        if r["outcome"]:
+            by_out.setdefault(r["outcome"], []).append(r["percent"])
+    # Include precomputed outcome totals only if no rows for that outcome
+    for a in precomputed:
+        oid = str(a.get("outcome") or "")
+        if oid and oid not in by_out:
+            cycle_outcomes.append({
+                "id": oid,
+                "n": a.get("n"),
+                "mean": a.get("mean"),
+                "percentMeeting": a.get("percentMeeting") or a.get("percent_meeting"),
+                "distributionShown": False,
+                "source": a.get("source") or "precomputed aggregate",
+            })
+    known_ids = {o["id"] for o in outcomes}
+    for spec in outcomes:
+        oid = spec["id"]
+        vals = by_out.get(oid)
+        rec = {"id": oid, "short": spec.get("short") or "", "label": spec.get("label") or oid}
+        if vals:
+            rec.update(_summarize_scores(vals, threshold, min_n))
+            rec["source"] = "anonymized score rows"
+        else:
+            prior = next((x for x in cycle_outcomes if x["id"] == oid), None)
+            if prior:
+                rec.update(prior)
+            else:
+                rec.update({"n": 0, "mean": None, "percentMeeting": None, "distributionShown": False, "source": None})
+        cycle_outcomes = [x for x in cycle_outcomes if x["id"] != oid]  # keep extras later
+        cycle_outcomes.append(rec)
+    # Any outcome ids in rows not in the standard 1-5 list
+    for oid, vals in sorted(by_out.items()):
+        if oid not in known_ids:
+            rec = {"id": oid, "short": "", "label": oid, "source": "anonymized score rows"}
+            rec.update(_summarize_scores(vals, threshold, min_n))
+            cycle_outcomes.append(rec)
+
+    has_results = bool(rows or precomputed)
+    return {
+        "folderUrl": link_for(drive_index, "cycle", "03_Assessment_Hub/Data"),
+        "readmeUrl": link_for(drive_index, "cycle", "03_Assessment_Hub/Data/README.txt"),
+        "empty": not has_results,
+        "emptyMessage": "No data yet — send grades/assessment results to Chief BOT.",
+        "criteria": {
+            "threshold": threshold,
+            "thresholdSource": criteria.get("thresholdSource") or "",
+            "programTarget": target,
+            "programTargetSource": criteria.get("programTargetSource") or "",
+        },
+        "outcomes": outcomes,
+        "outcomeNote": raw.get("outcomeNote") or "",
+        "minNForDistribution": min_n,
+        "privacyNote": "Scores in this app are de-identified. Names and student IDs are not published. Course/term sections with fewer than 5 assessed students show only class averages and attainment rates, not score distributions.",
+        "cycleOutcomes": cycle_outcomes,
+        "sections": sections,
+    }
 
 
 def build(cycle_dir: Path, previous_dir: Path) -> tuple[dict, list[str]]:
@@ -374,10 +690,13 @@ def build(cycle_dir: Path, previous_dir: Path) -> tuple[dict, list[str]]:
             "folderUrl": link_for(drive_index, "cycle", "03_Assessment_Hub"),
             "latestUrl": link_for(drive_index, "cycle", "03_Assessment_Hub/Latest"),
             "previousUrl": link_for(drive_index, "cycle", "03_Assessment_Hub/Previous_Versions"),
+            "dataUrl": link_for(drive_index, "cycle", "03_Assessment_Hub/Data"),
             "latest": files_in("cycle", "03_Assessment_Hub/Latest"),
             "previous": files_in("cycle", "03_Assessment_Hub/Previous_Versions"),
-            "note": "Current hub files live in Latest. Replaced files move to Previous Versions. PR #3 is open and not live.",
+            "dataFiles": files_in("cycle", "03_Assessment_Hub/Data", include_readme=True),
+            "note": "Current hub files live in Latest. Replaced files move to Previous Versions. Raw grade and assessment files go in Data. PR #3 is open and not live.",
         },
+        "assessmentData": build_assessment_data(drive_index, warnings),
         "selfStudy": {
             "folderUrl": link_for(drive_index, "cycle", "01_Self_Study_and_Program_Review"),
             "files": files_in("cycle", "01_Self_Study_and_Program_Review", include_readme=True),
@@ -443,7 +762,7 @@ def build(cycle_dir: Path, previous_dir: Path) -> tuple[dict, list[str]]:
             acc = set()
         if isinstance(obj, dict):
             for k, v in obj.items():
-                if k in {"url", "folderUrl", "backupUrl", "previousFolderUrl", "latestUrl", "previousUrl"} and isinstance(v, str) and v:
+                if k in {"url", "folderUrl", "backupUrl", "previousFolderUrl", "latestUrl", "previousUrl", "dataUrl", "readmeUrl"} and isinstance(v, str) and v:
                     acc.add(v)
                 else:
                     count_urls(v, acc)
@@ -492,6 +811,8 @@ def main(argv=None):
     print(f"Log entries: {len(data['log'])}")
     meeting_count = sum(len(y['meetings']) for y in data['years'])
     print(f"Meetings: {meeting_count}")
+    ad = data.get("assessmentData") or {}
+    print(f"Assessment data: {'empty' if ad.get('empty') else str(len(ad.get('sections') or [])) + ' section(s)'}")
     if warnings:
         print(f"\nWarnings ({len(warnings)}):")
         for w in warnings:

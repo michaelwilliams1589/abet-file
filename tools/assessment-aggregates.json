@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "description": "Anonymized assessment input for the public ABET File app. Each row is one de-identified score (course, term, assessment, outcome, score, optional max). Do not include student names or IDs. You can also add a tools/assessment-scores.csv with the same columns. Precomputed summary rows may go in aggregates when you have totals but not the score list.",
+  "criteria": {
+    "threshold": 70,
+    "thresholdSource": "ETDE 3213 outcome mapping (November 2026): individual threshold 70% (3.5/5 on the direct 0\u20135 evidence scale).",
+    "programTarget": 75,
+    "programTargetSource": "ETDE 3213 outcome mapping (November 2026): program target is at least 75% of assessed students meeting the individual threshold."
+  },
+  "outcomes": [
+    {
+      "id": "SO 1",
+      "short": "Technical problem-solving",
+      "label": "SO 1 \u2014 Technical problem-solving"
+    },
+    {
+      "id": "SO 2",
+      "short": "Design",
+      "label": "SO 2 \u2014 Design"
+    },
+    {
+      "id": "SO 3",
+      "short": "Communication",
+      "label": "SO 3 \u2014 Communication"
+    },
+    {
+      "id": "SO 4",
+      "short": "Testing and measurement",
+      "label": "SO 4 \u2014 Testing and measurement"
+    },
+    {
+      "id": "SO 5",
+      "short": "Teamwork",
+      "label": "SO 5 \u2014 Teamwork"
+    }
+  ],
+  "outcomeNote": "Labels follow the ETAC bachelor\u2019s student outcomes 1\u20135. ETDE 3213 is currently mapped to SO 1, SO 3, and SO 5. Use the program\u2019s official outcome statements in the Outcomes folder for reporting language.",
+  "minNForDistribution": 5,
+  "rows": [],
+  "aggregates": []
+}

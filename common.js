@@ -2,6 +2,7 @@ const PAGES = [
   ["index.html", "Overview"],
   ["meetings.html", "Meetings"],
   ["assessment.html", "Assessment"],
+  ["data.html", "Data"],
   ["self-study.html", "Review"],
   ["log.html", "Log"],
   ["previous.html", "Previous"]
@@ -116,6 +117,17 @@ function renderOverview(root) {
     </div>
     <p><a class="btn" href="log.html">Full running log →</a></p>
 
+    <h2>Assessment data</h2>
+    <div class="card">
+      <p class="summary">${(d.assessmentData && d.assessmentData.empty)
+        ? "No grades or attainment results have been entered yet. The Data tab is ready for de-identified scores and charts."
+        : "Open the Data tab for class averages, score distributions, and outcome attainment."}</p>
+      <div class="links">
+        <a class="btn primary" href="data.html">Data tab →</a>
+        ${d.assessment && d.assessment.dataUrl ? driveLink(d.assessment.dataUrl, "Raw data folder", "", "btn") : ""}
+      </div>
+    </div>
+
     ${d.hubPullRequest ? `
       <h2>Assessment Hub</h2>
       <div class="card">
@@ -181,6 +193,10 @@ function renderAssessment(root) {
     <div class="cards">${(a.latest || []).map(f => fileRow(f)).join("") || `<p class="empty">No current hub files yet.</p>`}</div>
     <div class="year-head"><h2>Previous versions</h2>${folderLink(a.previousUrl, "Previous versions")}</div>
     <div class="cards">${(a.previous || []).map(f => fileRow(f)).join("") || `<p class="empty">No superseded hub files yet.</p>`}</div>
+    <div class="year-head"><h2>Assessment data</h2>${folderLink(a.dataUrl, "Data folder")}</div>
+    <p class="note">Raw grade and assessment files go in the private Data folder. Charts live on the Data tab.</p>
+    <div class="cards">${(a.dataFiles || []).map(f => fileRow(f)).join("")}</div>
+    <p><a class="btn primary" href="data.html">Open the Data tab →</a></p>
   `;
 }
 
@@ -249,10 +265,164 @@ function renderPrevious(root) {
   `;
 }
 
+
+function svgEl(w, h, inner) {
+  return `<svg class="chart" viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-hidden="true">${inner}</svg>`;
+}
+
+function barChart(items, opts) {
+  opts = opts || {};
+  const w = 640, left = 132, right = 56, top = 8, rowH = 36;
+  const h = top + items.length * rowH + 16;
+  const max = opts.max || 100;
+  const barW = w - left - right;
+  const target = opts.target;
+  const bars = items.map((it, i) => {
+    const y = top + i * rowH;
+    const val = it.value;
+    const empty = val == null || Number.isNaN(val);
+    const bw = empty ? 0 : Math.max(0, Math.min(barW, (val / max) * barW));
+    const label = esc(it.label);
+    const valueText = empty ? (it.emptyText || "No data") : `${val}${opts.unit || ""}`;
+    const fill = !empty && target != null && val >= target ? "#ff7300" : "#c85a00";
+    return `<text x="0" y="${y + 18}" class="chart-label">${label}</text>
+      <rect x="${left}" y="${y + 6}" width="${barW}" height="20" rx="4" fill="#262626"/>
+      ${bw ? `<rect x="${left}" y="${y + 6}" width="${bw}" height="20" rx="4" fill="${fill}"/>` : ""}
+      <text x="${left + barW + 8}" y="${y + 21}" class="chart-val">${valueText}</text>`;
+  }).join("");
+  let targetLine = "";
+  if (target != null) {
+    const x = left + (target / max) * barW;
+    targetLine = `<line x1="${x}" y1="${top}" x2="${x}" y2="${h - 8}" stroke="#fbbf24" stroke-dasharray="3 3" stroke-width="1.5"/>
+      <text x="${x}" y="${h - 2}" class="chart-target" text-anchor="middle">Target ${esc(String(target))}${opts.unit || ""}</text>`;
+  }
+  return `<div class="chart-wrap">${svgEl(w, h, bars + targetLine)}</div>`;
+}
+
+function histogramChart(bins, opts) {
+  opts = opts || {};
+  if (!bins || !bins.length) return "";
+  const w = 640, h = 180, left = 28, right = 12, bottom = 36, top = 16;
+  const maxC = Math.max(1, ...bins.map(b => b.count || 0));
+  const barW = (w - left - right) / bins.length;
+  const innerH = h - top - bottom;
+  const threshold = opts.threshold;
+  const rects = bins.map((b, i) => {
+    const bh = (b.count / maxC) * innerH;
+    const x = left + i * barW;
+    const y = top + innerH - bh;
+    const mid = (b.from + b.to) / 2;
+    const fill = threshold != null && b.to <= threshold ? "#6b4a2b" : "#ff7300";
+    return `<rect x="${x + 2}" y="${y}" width="${Math.max(1, barW - 4)}" height="${bh}" rx="2" fill="${fill}"/>
+      <text x="${x + barW / 2}" y="${h - 16}" class="chart-axis" text-anchor="middle">${esc(String(b.from))}</text>
+      ${b.count ? `<text x="${x + barW / 2}" y="${y - 4}" class="chart-val" text-anchor="middle">${b.count}</text>` : ""}`;
+  }).join("");
+  let tline = "";
+  if (threshold != null) {
+    const x = left + (threshold / 100) * (w - left - right);
+    tline = `<line x1="${x}" y1="${top}" x2="${x}" y2="${top + innerH}" stroke="#fbbf24" stroke-dasharray="3 3" stroke-width="1.5"/>`;
+  }
+  return `<div class="chart-wrap">${svgEl(w, h, rects + tline)}</div><p class="quiet">Horizontal axis is percent score. The dashed line is the ${esc(String(threshold))}% individual threshold.</p>`;
+}
+
+function statStrip(s) {
+  const nLabel = s.n != null ? esc(String(s.n)) : "—";
+  const mean = s.mean != null ? esc(String(s.mean)) + "%" : "—";
+  const meet = s.percentMeeting != null ? esc(String(s.percentMeeting)) + "%" : "—";
+  return `<div class="stats compact">
+    <div class="stat"><b>${nLabel}</b><span>Assessed</span></div>
+    <div class="stat"><b>${mean}</b><span>Average</span></div>
+    <div class="stat"><b>${meet}</b><span>Meeting threshold</span></div>
+  </div>`;
+}
+
+function renderData(root) {
+  const d = data();
+  const a = d.assessmentData || {};
+  const cr = a.criteria || {};
+  const target = cr.programTarget;
+  const threshold = cr.threshold;
+  const outcomes = (a.cycleOutcomes || []).map(o => ({
+    label: o.id,
+    value: o.percentMeeting,
+    emptyText: "No data",
+    n: o.n
+  }));
+  const outcomeChart = outcomes.length
+    ? barChart(outcomes, { max: 100, target, unit: "%" })
+    : "";
+  const outcomeCards = (a.cycleOutcomes || []).map(o => {
+    const has = o.n > 0 && o.percentMeeting != null;
+    return `<article class="card">
+      <h3>${esc(o.label || o.id)}</h3>
+      <div class="meta">${has ? `${esc(String(o.n))} assessed · source: ${esc(o.source || "")}` : "No results entered yet"}</div>
+      ${has ? statStrip(o) : `<p class="empty">No data</p>`}
+      ${o.distributionShown && o.histogram ? histogramChart(o.histogram, { threshold }) : (has && !o.distributionShown && o.n > 0 && o.n < (a.minNForDistribution || 5) ? `<p class="note">Fewer than ${esc(String(a.minNForDistribution || 5))} assessed scores — distribution hidden.</p>` : "")}
+    </article>`;
+  }).join("");
+
+  const sectionCards = (a.sections || []).map(s => {
+    const hidden = !s.distributionShown && s.n > 0 && s.n < (a.minNForDistribution || 5);
+    const assessments = (s.assessments || []).map(x => {
+      const bits = [`n=${esc(String(x.n ?? "—"))}`];
+      if (x.mean != null) bits.push(`avg ${esc(String(x.mean))}%`);
+      if (x.percentMeeting != null) bits.push(`${esc(String(x.percentMeeting))}% meeting`);
+      return `<div class="item"><div class="file-link">${esc(x.name)}</div><div class="quiet">${bits.join(" · ")}${x.distributionShown && x.histogram ? "" : (hidden ? " · distribution hidden" : "")}</div>
+        ${x.distributionShown && x.histogram ? histogramChart(x.histogram, { threshold }) : ""}</div>`;
+    }).join("");
+    const so = (s.outcomes || []).map(x => {
+      const bits = [`n=${esc(String(x.n ?? "—"))}`];
+      if (x.mean != null) bits.push(`avg ${esc(String(x.mean))}%`);
+      if (x.percentMeeting != null) bits.push(`${esc(String(x.percentMeeting))}% meeting`);
+      return `<div class="item"><div class="file-link">${esc(x.id)}</div><div class="quiet">${bits.join(" · ")}</div>
+        ${x.distributionShown && x.histogram ? histogramChart(x.histogram, { threshold }) : ""}</div>`;
+    }).join("");
+    return `<article class="card">
+      <div class="meta">${esc(s.term)} · source: ${esc(s.source || "")}</div>
+      <h3>${esc(s.course)}</h3>
+      ${statStrip(s)}
+      ${hidden ? `<p class="note">Fewer than ${esc(String(a.minNForDistribution || 5))} assessed students in this course/term — only aggregates are shown.</p>` : ""}
+      ${s.distributionShown && s.histogram ? `<h3 class="chart-title">Score distribution</h3>${histogramChart(s.histogram, { threshold })}` : ""}
+      ${assessments ? `<h3 class="chart-title">By assessment</h3>${assessments}` : ""}
+      ${so ? `<h3 class="chart-title">By student outcome</h3>${so}` : ""}
+    </article>`;
+  }).join("");
+
+  root.innerHTML = `
+    <p class="note">${esc(a.privacyNote || "")}</p>
+    <div class="links" style="margin-bottom:12px">
+      ${a.folderUrl ? driveLink(a.folderUrl, "Raw data folder in Drive", "", "btn primary") : ""}
+      ${a.readmeUrl ? driveLink(a.readmeUrl, "Data folder README", "txt", "btn") : ""}
+    </div>
+
+    <div class="card criteria">
+      <h3>Program criteria</h3>
+      <p class="summary">Individual threshold: <strong>${esc(String(threshold))}%</strong>. Program target: <strong>${esc(String(target))}%</strong> of assessed students meeting the threshold.</p>
+      <p class="quiet">${esc(cr.thresholdSource || "")}</p>
+      <p class="quiet">${esc(cr.programTargetSource || "")}</p>
+      <p class="quiet">These are criteria from the approved mapping, not measured results.</p>
+    </div>
+
+    ${a.empty ? `<div class="card empty-data">
+      <h3>${esc(a.emptyMessage || "No data yet — send grades/assessment results to Chief BOT.")}</h3>
+      <p class="summary">Send de-identified scores (no names or IDs). The charts below will fill in after the index is regenerated. Use columns: course, term, assessment, outcome, score, and optional max.</p>
+    </div>` : ""}
+
+    <div class="year-head"><h2>Student outcome attainment (SO 1–5)</h2></div>
+    <p class="note">${esc(a.outcomeNote || "")}</p>
+    ${outcomeChart}
+    <div class="cards">${outcomeCards}</div>
+
+    <div class="year-head"><h2>By course and term</h2></div>
+    ${sectionCards || `<p class="empty">No course or term results yet. This section will list each class with averages, and with histograms once at least ${esc(String(a.minNForDistribution || 5))} students have been assessed.</p>`}
+  `;
+}
+
 const RENDERERS = {
   "index.html": renderOverview,
   "meetings.html": renderMeetings,
   "assessment.html": renderAssessment,
+  "data.html": renderData,
   "self-study.html": renderSelfStudy,
   "log.html": renderLog,
   "previous.html": renderPrevious

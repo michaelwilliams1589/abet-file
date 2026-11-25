@@ -1,0 +1,3 @@
+course,term,assessment,outcome,score,max
+# Example only. Copy to assessment-scores.csv and add de-identified rows.
+# Do not include student names or IDs. score is points earned; max is points possible (default 100).

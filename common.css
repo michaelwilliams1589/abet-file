@@ -176,3 +176,13 @@ button, nav a, a.btn, a.link-chip { -webkit-tap-highlight-color: transparent; }
   h1 { font-size: 1.35rem; }
   .stats { grid-template-columns: 1fr 1fr; }
 }
+.stats.compact { margin: 8px 0 4px; }
+.chart-wrap { margin: 8px 0 4px; overflow-x: auto; }
+svg.chart { display: block; max-width: 100%; height: auto; }
+.chart-label { fill: #e5e5e5; font-size: 13px; font-family: "Segoe UI", system-ui, Arial, sans-serif; }
+.chart-val { fill: #d4d4d4; font-size: 11px; font-family: "Segoe UI", system-ui, Arial, sans-serif; }
+.chart-axis { fill: #8a8a8a; font-size: 9px; font-family: "Segoe UI", system-ui, Arial, sans-serif; }
+.chart-target { fill: #fbbf24; font-size: 10px; font-family: "Segoe UI", system-ui, Arial, sans-serif; }
+h3.chart-title { margin-top: 14px; font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.card.criteria, .card.empty-data { border-color: rgba(255, 115, 0, 0.35); }
+nav a { min-width: 3.6rem; padding: 10px 6px 8px; font-size: 0.7rem; }
